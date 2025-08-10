@@ -1,5 +1,6 @@
 package com.gokhan.stoktakip.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
@@ -12,8 +13,13 @@ public class ItemDTO {
    private Long criticalAmount;
    private String birim;
    private Double price;
-   private Double boy;
+
+   @JsonProperty("cap")
    private Double cap;
+
+   @JsonProperty("boy")
+   private Double boy;
+
 
 
 }
