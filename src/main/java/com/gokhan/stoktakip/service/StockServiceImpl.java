@@ -67,6 +67,8 @@ public class StockServiceImpl implements StockService {
             item.setCriticalAmount(dto.getCriticalAmount());
             item.setBirim(dto.getBirim());
             item.setPrice(dto.getPrice());
+            item.setCap(dto.getCap());
+            item.setBoy(dto.getBoy());
 
             Item updated = stockRepository.save(item);
             return stockMapper.toDto(updated);

@@ -12,5 +12,8 @@ public class ItemDTO {
    private Long criticalAmount;
    private String birim;
    private Double price;
+   private Double boy;
+   private Double cap;
+
 
 }

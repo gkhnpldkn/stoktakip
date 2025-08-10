@@ -19,9 +19,11 @@ public class Item {
 
     private String description;
     private Long criticalAmount;
-    //ÇAP-BOY
+    private Double cap;
+    private Double boy;
+
     private String birim;
-    //MALİYET
+
 private Double price;
 
 }
