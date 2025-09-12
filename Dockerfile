@@ -5,11 +5,8 @@ FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
 
 # Copy Maven wrapper and pom.xml first for dependency caching
-COPY --link pom.xml mvnw
 COPY --link .mvn .mvn
 
-# Make sure the Maven wrapper is executable and download dependencies
-RUN chmod +x mvnw && ./mvnw dependency:go-offline
 
 # Copy the rest of the source code
 COPY --link src ./src
@@ -34,5 +31,3 @@ USER appuser
 # Expose the default Spring Boot port
 EXPOSE 8080
 
-# JVM options: container-aware memory settings
-ENTRYPOINT ["java", "-XX:MaxRAMPercentage=80.0", "-jar", "/app/app.jar"]
